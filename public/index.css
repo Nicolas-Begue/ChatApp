@@ -1,6 +1,6 @@
 /* ALL */
 * {
-  list-style: square;
+  list-style: none;
   padding-left: 0;
   font-style: "Roboto";
   transition: all 1s;
