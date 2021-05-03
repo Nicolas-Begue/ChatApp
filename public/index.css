@@ -1,0 +1,271 @@
+/* ALL */
+* {
+  list-style: square;
+  padding-left: 0;
+  font-style: "Roboto";
+  transition: all 1s;
+}
+
+/* CONTAINER PRINCIPAL */
+.main {
+  display: block;
+}
+
+/* COLONNE CONTACT */
+.contactCol {
+  position: absolute;
+  left: 0;
+  height: 100vh;
+  background-color: white;
+  border-right: 1px solid grey;
+  overflow: auto;
+}
+.title {
+  padding-top: 25px;
+  text-align: center;
+  font-size: 34px;
+  color: dodgerblue;
+}
+.myUsername {
+  font-size: 18px;
+}
+.deconnexion {
+  display: none;
+  margin: 10px;
+  margin-top: 20px;
+}
+.myColor {
+  text-align: center;
+}
+#users {
+  overflow: auto;
+}
+#users li {
+  transition: all 0.5s;
+  background: lightgray;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+#users li.new {
+  background: lightgreen;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+/* COLONNE CHAT */
+.chatCol {
+  position: absolute;
+  right: 0;
+  height: 90vh;
+  overflow: scroll;
+  overflow-x: hidden;
+  background-color: white;
+}
+.messageInput {
+  position: fixed;
+  left: 19%;
+  bottom: 10px;
+  width: 78%;
+  height: 5%;
+  background: whitesmoke;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+}
+.messageInput:focus {
+  box-shadow: none;
+  outline: none;
+  padding-left: 1%;
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+.messageInput::placeholder {
+  padding-left: 5px;
+}
+.myMessage {
+  float: right;
+  clear: both;
+  text-align: right;
+  background-color: lightblue;
+  word-wrap: break-word;
+  max-width: 50%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 20px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+.otherMessage {
+  float: left;
+  clear: both;
+  text-align: left;
+  background-color: lightgray;
+  word-wrap: break-word;
+  max-width: 50%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 20px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.username {
+  font-weight: bold;
+}
+.sendButton {
+  display: none;
+}
+.messageHour {
+  display: none;
+  background-color: lightgray;
+  padding: 5px;
+  border-radius: 25px;
+  right: 50px;
+}
+.theirMessageHour {
+  display: none;
+  background-color: lightgray;
+  padding: 5px;
+  border-radius: 25px;
+  right: 50px;
+}
+.onlineStatus {
+  color: green;
+}
+.login,
+.logout {
+  position: relative;
+  text-align: center;
+  clear: both;
+}
+.settings {
+  background: none;
+  position: absolute;
+  bottom: 2%;
+  right: 0;
+  font-size: 14px;
+  border: none;
+}
+.settings:hover {
+  background: none;
+  border: none;
+}
+.chatColor {
+  display: none;
+  border-radius: 15px;
+  padding: 10px;
+  background: lightgray;
+  position: absolute;
+  bottom: 7%;
+  right: 10px;
+}
+.chatColor h6 {
+  margin-top: 0;
+}
+
+/* LOGIN */
+#login {
+  display: none;
+  flex-direction: column;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 30vh;
+}
+.nom,
+.prenom {
+  margin-top: 10px;
+  width: 250px;
+}
+.connexion {
+  width: 250px;
+  margin-top: 5px;
+}
+.log {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* TITLES */
+h5 {
+  margin-top: 20px;
+  text-align: center;
+}
+h6 {
+  margin-top: 20px;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* RESPONSIVE */
+.navbar {
+  display: none;
+  position: fixed;
+  min-height: 10vh;
+  background-color: lightgray;
+}
+.settingsButton {
+  position: absolute;
+  right: 2%;
+  margin-top: 13px;
+}
+body#logged-out .main {
+  display: none;
+}
+#login {
+  display: block;
+  text-align: center;
+  margin-top: 30vh;
+}
+@media screen and (max-width: 1205px) {
+  .contactCol {
+    display: block;
+  }
+  .settings {
+    display: none;
+  }
+  .contactCol > * {
+    display: none;
+  }
+  .messageInput {
+    left: 21%;
+    width: 75%;
+    min-height: 25px;
+  }
+  .chatCol {
+    margin-top: 10vh;
+    height: 80vh;
+    z-index: -1;
+  }
+  .navbar {
+    border-bottom: solid 1px black;
+    z-index: 999;
+  }
+  .myMessage,
+  .otherMessage {
+    min-width: 75%;
+    max-width: 100%;
+  }
+  .title {
+    font-size: 24px;
+    text-align: left;
+    margin-top: -10px;
+  }
+}

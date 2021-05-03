@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--* BOOTSRAP *-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <!--* FONTS *-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+
+    <!--* STYLE *-->
+    <link rel="stylesheet" href="index.css" />
+
+    <!--* JAVASCRIPT *-->
+    <script src="index.js" defer></script>
+    <script src="client.js" defer></script>
+
+    <!--* SOCKET.IO *-->
+    <script src="socket.io/socket.io.js"></script>
+
+    <!--* JQUERY *-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <title>Chat App</title>
+  </head>
+  <body id="logged-out">
+    <!--* SECTION LOGIN *-->
+    <section id="login">
+      <div class="container loginForm">
+        <h1>Connexion</h1>
+        <input placeholder="Prénom" class="prenom" type="text" /><br />
+        <input placeholder="Nom" class="nom" type="text" /><br />
+        <button type="button" onclick="connexion()" class="btn btn-success connexion">C'est partit !</button>
+      </div>
+    </section>
+    <!--* FIN SECTION LOGIN *-->
+
+    <!--* NAVBAR *-->
+    <div class="container-fluid navbar">
+      <div class="row">
+        <div class="col-6">
+          <h1 class="title">Chat App <i class="fas fa-comments"></i></h1>
+        </div>
+        <div class="col-6">
+          <button type="button" class="btn btn-light settingsButton"><i class="fas fa-cogs"></i></button>
+        </div>
+      </div>
+    </div>
+    <!--* FIN NAVBAR *-->
+
+    <!--* PRINCIPAL *-->
+    <div class="main">
+      <div class="row">
+        <!--* COLONNE CONTACT *-->
+        <div class="col-2 contactCol">
+          <h1 class="title">Chat App <i class="fas fa-comments"></i></h1>
+          <div class="log">
+            <h5 class="myUsername"></h5>
+            <button type="button" onclick="deconnexion()" class="btn btn-danger deconnexion"><i class="fas fa-power-off"></i></button>
+          </div>
+          <h5>Utilisateurs connectés</h5>
+          <ul id="users"></ul>
+        </div>
+        <!--* FIN COLONNE CONTACT *-->
+
+        <!--* COLONNE CHAT *-->
+        <div class="col-10 chatCol">
+          <ul class="messages"></ul>
+          <div class="row">
+            <input class="messageInput" type="text" />
+          </div>
+          <div class="row">
+            <button onclick="message()" type="button" class="btn btn-primary sendButton"></button>
+          </div>
+        </div>
+        <!--* FIN COLONNE CHAT *-->
+      </div>
+      <div class="chatColor">
+        <h6>Couleur du chat</h6>
+        <input class="myColor" type="color" value="#ADD8E6" />
+        <button onclick="color()" class="btn btn-info colorButton" type="button">Valider</button>
+      </div>
+      <button onclick="settings()" type="button" class="btn btn-light settings"><i class="fas fa-cogs"></i></button>
+    </div>
+  </body>
+  <script src="https://kit.fontawesome.com/e8a7f40cd9.js" crossorigin="anonymous"></script>
+</html>
